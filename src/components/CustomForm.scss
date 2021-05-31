@@ -1,0 +1,9 @@
+$color1: #d3ecd9;
+$color2: #135624;
+
+.form-container {
+  background-color: $color1;
+  .form {
+    color: $color2;
+  }
+}
