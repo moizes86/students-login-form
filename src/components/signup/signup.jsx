@@ -35,19 +35,19 @@ const Signup = () => {
   };
   const history = useHistory();
 
-  const [username, setUsername] = useState("Moshe Mantsur");
+  const [username, setUsername] = useState("");
   const [usernameErrors, setUsernameErrors] = useState([]);
 
-  const [email, setEmail] = useState("moshe.mn86@gmail.com");
+  const [email, setEmail] = useState("");
   const [emailErrors, setEmailErrors] = useState([]);
 
-  const [address, setAddress] = useState("Kineret 12 Rehovot");
+  const [address, setAddress] = useState("");
   const [addressErrors, setAddressErrors] = useState([]);
 
-  const [course, setCourse] = useState("React");
+  const [course, setCourse] = useState("");
   const [courseErrors, setCourseErrors] = useState([]);
 
-  const [gender, setGender] = useState("Male");
+  const [gender, setGender] = useState("");
   const [genderErrors, setGenderErrors] = useState([]);
 
   const [lodaing, setLoading] = useState(false);
@@ -109,10 +109,6 @@ const Signup = () => {
     }, 1000);
   };
 
-  const clearForm = () => {
-    Object.keys(fieldsUtils).forEach((key) => fieldsUtils[key].set(""));
-  };
-
   const onSubmit = (e) => {
     e.preventDefault();
     let errors = false;
@@ -124,7 +120,6 @@ const Signup = () => {
     if (!errors) {
       toggleSpinner();
       DAL.addStudent({ username, email, address, course, gender });
-      clearForm();
     }
   };
 
