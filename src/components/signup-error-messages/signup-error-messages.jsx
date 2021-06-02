@@ -1,6 +1,6 @@
 import React from "react";
 
-const ErrorMessages = ({ errors }) => {
+const SignupErrorMessages = ({ errors }) => {
   return (
     <>
       {errors.map((error, index) => (
@@ -12,4 +12,4 @@ const ErrorMessages = ({ errors }) => {
   );
 };
 
-export default ErrorMessages;
+export default SignupErrorMessages;

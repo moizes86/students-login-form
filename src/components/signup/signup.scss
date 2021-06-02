@@ -1,9 +1,14 @@
 $color1: #d3ecd9;
 $color2: #135624;
+$color3: #FFB6C1;
 
 .form-container {
   background-color: $color1;
   .form {
     color: $color2;
+  }
+
+  .invalid-input{
+    background-color: $color3;
   }
 }
