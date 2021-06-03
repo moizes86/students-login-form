@@ -15,8 +15,8 @@ const setInitialStudentsInLocalStorage = () => {
       gender: "Other",
     },
   ];
-  initialStudents.forEach(student=> DAL.addStudent(student));
-}
+  initialStudents.forEach((student) => DAL.addStudent(student));
+};
 
 const studentsFromLocalStorage = () => JSON.parse(localStorage.getItem("students")) || [];
 
@@ -25,7 +25,7 @@ const DAL = {
     localStorage.setItem("students", JSON.stringify([...studentsFromLocalStorage(), student]));
   },
 
-  getStudents: () => studentsFromLocalStorage,
+  getStudents: () => studentsFromLocalStorage(),
 
   sortStudentsByName: () => {
     const students = studentsFromLocalStorage();
@@ -37,7 +37,9 @@ const DAL = {
     return students;
   },
 };
-setInitialStudentsInLocalStorage();
 
+if (!JSON.parse(localStorage.getItem("students"))) {
+  setInitialStudentsInLocalStorage();
+}
 
 export default DAL;

@@ -6,12 +6,12 @@ import Button from "react-bootstrap/Button";
 import "./my-modal.scss";
 import DAL from "../../DAL/api";
 
-const MyModal = ({childComponent:ChildComponent , updateParent}) => {
+const MyModal = ({ childComponent: ChildComponent, updateParent }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
     setShow(false);
-    updateParent([...DAL.getStudents()])
+    updateParent([...DAL.getStudents()]);
   };
   const handleShow = () => setShow(true);
 
